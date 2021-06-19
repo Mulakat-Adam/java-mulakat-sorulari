@@ -1,2 +1,2 @@
-# java-mulakat-sorulari
-Java dili üzerinden temel programlama mülakat soruları ve çözümleri
+# Java Programlama Mülakat Soruları
+Java programlama dili üzerinden temel programlama mülakat soruları ve çözümlerini içerir.
