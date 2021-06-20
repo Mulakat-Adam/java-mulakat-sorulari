@@ -6,7 +6,7 @@ public class Q10 {
         int b = 1;
         int c = 0;
 
-        while (c<100){
+        while (c<n){
             c = a + b;
             System.out.println(c);
             a = b;
@@ -15,7 +15,7 @@ public class Q10 {
     }
 
     public static void main(String[] args) {
-        fibonacciSeries(50);
+        fibonacciSeries(100);
     }
 
 }
