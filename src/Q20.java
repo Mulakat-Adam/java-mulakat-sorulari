@@ -1,22 +1,26 @@
 /* singleton design pattern*/
-public class Q20 {
+class Q20 {  
 
-    private Q20(){
-        System.out.println("Singleton olusturuldu.");
+  private static Q20 instance = null;
+
+  private Q20(){}
+
+  public static Q20 getInstance(){
+    if(instance == null){
+     System.out.println("Instance olusturuldu."); 
+      instance = new Q20();
+      return instance;
+    }else{
+           System.out.println("Instance daha once olusturulmus."); 
+      return instance;
     }
+  }
 
-    private static Q20 instance = null;
+}
+class Main{
+  public static void main(String[] args){
+    Object s1 = Q20.getInstance();
+    Object s2 = Q20.getInstance();
 
-    public static Q20 getInstance(){
-        if (instance == null){
-            return new Q20();
-        }else {
-            return instance;
-        }
-    }
-
-    public static void main(String[] args) {
-        /* singleton class does not called by new */
-        Q20 s1 = getInstance();
-    }
+  }
 }
