@@ -17,28 +17,37 @@ class Square extends Shape{
     }
 }
 
-class Circle extends Shape{
+class Circle{
+    int width;
+  
     public Circle(int width){
-        super.width = width;
+        this.width = width;
     }
 
-    void area(){
+    void circleArea(){
         double area = ((Math.PI) * width * width);
         System.out.println(area);
     }
 }
 
+class Adapter extends Shape{
+  public Circle circle;
+  
+      public Adapter(Circle circle){
+        this.circle = circle;
+    }
+
+  void area(){
+    circle.circleArea();
+  }
+}
+
 public class Q27 {
     public static void main(String[ ] args) {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Kare alani icin sayi giriniz:");
-        int x = sc.nextInt();
-        System.out.println("Daire alani icin sayi giriniz:");
-        int y = sc.nextInt();
-
-        Square a = new Square(x);
-        Circle b = new Circle(y);
-        a.area();
-        b.area();
+      Square s = new Square(5);
+      s.area();
+      Circle c = new Circle(4);
+      Adapter a = new Adapter(c);
+      a.area();
     }
 }
